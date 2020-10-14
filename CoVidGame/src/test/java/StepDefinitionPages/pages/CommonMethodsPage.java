@@ -5,40 +5,21 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.PageObject;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
-import static objectRepository.ObjectRepository.QuestionnairePageLocators.*;
+import static objectRepository.ObjectRepository.QuestionnairePageLocators.StartButtonPopup_css;
 
 public class CommonMethodsPage extends PageObject {
 
     @Steps
     public EndUserSteps Superhero;
 
-
     @FindBy(css =  StartButtonPopup_css)
     private WebElementFacade StartButtonPopup;
 
-
-
-
-
-
-    public void moveToElement(WebElementFacade chooseYourBattleFieldTitle) {
-        Actions action = new Actions(getDriver());
-        action.moveToElement(find(By.xpath(String.valueOf(chooseYourBattleFieldTitle)))).build().perform();
-    }
-
+//  Scroll to the bottom of the page
     public void scrollTillTheEndOfPage() {
         try {
             long lastHeight = (long) ((JavascriptExecutor) getDriver()).executeScript("return document.body.scrollHeight");
@@ -56,14 +37,12 @@ public class CommonMethodsPage extends PageObject {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
-
+//  Click on the "Start" button on the popup for all the questionnaires (Modal class)
     public void clickOnStartButtonOnPopup() {
         StartButtonPopup.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         StartButtonPopup.click();
-
     }
 
 }

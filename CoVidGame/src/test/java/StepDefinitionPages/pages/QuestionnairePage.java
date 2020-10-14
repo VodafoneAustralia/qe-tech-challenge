@@ -1,7 +1,6 @@
 package StepDefinitionPages.pages;
 
 import StepDefinitionPages.steps.serenity.EndUserSteps;
-import cucumber.api.java.en.And;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
@@ -10,9 +9,9 @@ import java.time.Duration;
 
 import static objectRepository.ObjectRepository.QuestionnairePageLocators.*;
 
-
 public class QuestionnairePage extends PageObject {
 
+//  Page objects for the Public place battlefield
     @FindBy(xpath =  YouAreAtARestaurant_xpath)
     private WebElementFacade YouAreAtARestaurantQuestion;
 
@@ -36,7 +35,6 @@ public class QuestionnairePage extends PageObject {
 
     @FindBy(xpath =  YouAreSeatedAtARestaurantAnswer_xpath)
     private WebElementFacade YouAreSeatedAtARestaurantAnswer;
-
 
     @FindBy(xpath =  YouHaveEnteredTheOffice2_xpath)
     private WebElementFacade YouHaveEnteredTheOffice2;
@@ -74,8 +72,6 @@ public class QuestionnairePage extends PageObject {
     @FindBy(xpath =  YouAreSeatedAtARestaurantAnswer3_xpath)
     private WebElementFacade YouAreSeatedAtARestaurantAnswer3;
 
-
-
     @FindBy(css =  StartButtonPopup_css)
     private WebElementFacade StartButtonPopup;
 
@@ -86,8 +82,7 @@ public class QuestionnairePage extends PageObject {
     private WebElementFacade Continue;
 
 
-//    Bus
-
+//  Page objects for the Bus battlefield
     @FindBy(xpath = Bus_YouHaveTakenThePublicBus_xpath)
     private WebElementFacade Bus_YouHaveTakenThePublicBus;
 
@@ -148,10 +143,8 @@ public class QuestionnairePage extends PageObject {
     @FindBy(xpath = Bus_YouHaveTakenThePublicBus3Answer_xpath)
     private WebElementFacade Bus_YouHaveTakenThePublicBus3Answer;
 
-//    Bus ends
 
-//    Office
-
+//  Page objects for the office battlefield
     @FindBy(xpath = Office_YouHaveEnteredTheOffice_xpath)
     private WebElementFacade Office_YouHaveEnteredTheOffice;
 
@@ -212,11 +205,9 @@ public class QuestionnairePage extends PageObject {
     @FindBy(xpath = Office_YouHaveEnteredTheOffice3Answer_xpath)
     private WebElementFacade Office_YouHaveEnteredTheOffice3Answer;
 
-//    Office Ends
-
-//    Game
-@FindBy(xpath = AreYouGame_xpath)
-private WebElementFacade AreYouGame;
+//   Page objects for the "Are you Game?" battlefield
+     @FindBy(xpath = AreYouGame_xpath)
+     private WebElementFacade AreYouGame;
 
     @FindBy(xpath = AreYouGameAnswer_xpath)
     private WebElementFacade AreYouGameAnswer;
@@ -226,7 +217,6 @@ private WebElementFacade AreYouGame;
 
     @FindBy(xpath = AreYouGame0Answer_xpath)
     private WebElementFacade AreYouGame0Answer;
-
 
     @FindBy(xpath = AreYouGame1_xpath)
     private WebElementFacade AreYouGame1;
@@ -282,40 +272,36 @@ private WebElementFacade AreYouGame;
     @FindBy(xpath = AreYouGame9Answer_xpath)
     private WebElementFacade AreYouGame9Answer;
 
-//    Game Ends
-
     EndUserSteps Superhero;
 
+//  Select the questionnaire set depending on the battlefield selected
     public void solveQuestionnaireFor(String type) {
         String field_type = type;
 
         switch (field_type) {
             case "PublicPlace":
                 attackVillainsForPublicPlace();
-
                 break;
 
             case "Bus":
                 attackVillainsFirstFromTheBus();
-//
                 break;
 
             case "Office":
                 attackVillainsFirstFromTheOffice();
-//
                 break;
 
             case "Are you game":
                 areYouGame();
-//
                 break;
 
             default:
-                System.out.print("blah");
+                System.out.print("User must select one of the battlefields");
                 break;
         }
     }
 
+//  Select the right answers for all qustionnaires under "Are you game?" battlefield
     private void areYouGame() {
 
         AreYouGame.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
@@ -330,7 +316,6 @@ private WebElementFacade AreYouGame;
 
         ContinueToTheNextQuestion();
 
-
         AreYouGame1.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         AreYouGame1Answer.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(2));
         AreYouGame1Answer.click();
@@ -342,7 +327,6 @@ private WebElementFacade AreYouGame;
         AreYouGame2Answer.click();
 
         ContinueToTheNextQuestion();
-
 
         AreYouGame3.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         AreYouGame3Answer.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(2));
@@ -356,21 +340,17 @@ private WebElementFacade AreYouGame;
 
         ContinueToTheNextQuestion();
 
-
-
         AreYouGame5.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         AreYouGame5Answer.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(2));
         AreYouGame5Answer.click();
 
         ContinueToTheNextQuestion();
 
-
         AreYouGame6.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         AreYouGame6Answer.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(2));
         AreYouGame6Answer.click();
 
         ContinueToTheNextQuestion();
-
 
         AreYouGame7.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         AreYouGame7Answer.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(2));
@@ -392,6 +372,7 @@ private WebElementFacade AreYouGame;
 
     }
 
+//  Select the right answers for all qustionnaires under the Office battlefield
     private void attackVillainsFirstFromTheOffice() {
         Office_YouHaveEnteredTheOffice.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         Office_YouHaveEnteredTheOfficeAnswer.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(2));
@@ -462,6 +443,7 @@ private WebElementFacade AreYouGame;
 
     }
 
+//  Select the right answers for all qustionnaires under the Bus battlefield
     private void attackVillainsFirstFromTheBus() {
 
         Bus_YouHaveTakenThePublicBus.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
@@ -521,7 +503,6 @@ private WebElementFacade AreYouGame;
         tryTheNextBattle();
         clickOnStartButtonOnPopup();
 
-
         Bus_YouHaveEnteredTheOffice2.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         Bus_YouHaveEnteredTheOffice2Answer.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(2));
         Bus_YouHaveEnteredTheOffice2Answer .click();
@@ -529,23 +510,20 @@ private WebElementFacade AreYouGame;
         tryTheNextBattle();
         clickOnStartButtonOnPopup();
 
-
         Bus_YouHaveTakenThePublicBus3.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         Bus_YouHaveTakenThePublicBus3Answer.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(2));
         Bus_YouHaveTakenThePublicBus3Answer .click();
 
-
-
     }
 
+//  Click on the Start button popup after every question
     public void clickOnStartButtonOnPopup() {
         StartButtonPopup.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         StartButtonPopup.click();
-
     }
 
+//  Select the right answers for all qustionnaires under the Public place battlefield
     private void attackVillainsForPublicPlace() {
-//        getDriver().switchTo().defaultContent();
         YouAreAtARestaurantQuestion.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         YouAreAtARestaurantAnswer.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(2));
         YouAreAtARestaurantAnswer.click();
@@ -612,15 +590,16 @@ private WebElementFacade AreYouGame;
         YouAreSeatedAtARestaurant3.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         YouAreSeatedAtARestaurantAnswer3.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(2));
         YouAreSeatedAtARestaurantAnswer3.click();
-        waitFor(10).seconds();
+
     }
 
+//  Click on "Try the next battle" button
     private void tryTheNextBattle() {
         TryTheNextBattle.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         TryTheNextBattle.click();
-
     }
 
+//  Click on "Continue" button
     public void ContinueToTheNextQuestion(){
         Continue.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         Continue.click();

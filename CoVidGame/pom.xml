@@ -2,7 +2,7 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
     <groupId>VHATechChallenge</groupId>
-    <artifactId>COVID-19 THE GAME</artifactId>
+    <artifactId>COVIDGAME</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
     <name>SuperHeroes and SuperVillain</name>
@@ -12,7 +12,6 @@
         <serenity.cucumber.version>1.9.45</serenity.cucumber.version>
         <webdriver.driver>chrome</webdriver.driver>
         <webdriver.base.url></webdriver.base.url>
-<!--        <parallel.tests>1</parallel.tests>-->
     </properties>
     <repositories>
         <repository>
@@ -40,6 +39,11 @@
             <artifactId>serenity-core</artifactId>
             <version>${serenity.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
@@ -81,12 +85,7 @@
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
                     </systemPropertyVariables>
-<!--                    <parallel>methods</parallel>-->
-<!--                    <threadCount>${parallel.tests}</threadCount>-->
-<!--                    <perCoreThreadCount>true</perCoreThreadCount>-->
-<!--                    <threadCount>2</threadCount>-->
-<!--                    <forkCount>2C</forkCount>-->
-<!--                    <forkCount>${parallel.tests}</forkCount>-->
+
                 </configuration>
                 <executions>
                     <execution>
@@ -117,29 +116,6 @@
                         <goals>
                             <goal>aggregate</goal>
                         </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.github.temyers</groupId>
-                <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-                <version>5.0.0</version>
-                <executions>
-                    <execution>
-                        <id>generateRunners</id>
-                        <phase>generate-test-sources</phase>
-                        <goals>
-                            <goal>generateRunners</goal>
-                        </goals>
-                        <configuration>
-                            <!-- Mandatory -->
-                            <!-- List of package names to scan for glue code. -->
-                            <glue>
-                                <package>DTM.steps</package>
-                            </glue>
-                            <parallelScheme>FEATURE</parallelScheme>
-                            <customVmTemplate>src/test/resources/cucumber-serenity-runner.vm</customVmTemplate>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>

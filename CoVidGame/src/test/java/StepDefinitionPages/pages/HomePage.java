@@ -23,20 +23,17 @@ public class HomePage extends PageObject {
     @FindBy(xpath =  StartYourJourney_xpath)
     private WebElementFacade StartYourJourney;
 
-
-
-
     private EnvironmentVariables environmentVariables;
 
+//  Type the name of the Superhero/warrior
     public void enterWarriorNameInTextBox(String name) {
-        WarriorNameTextbox.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
+        WarriorNameTextbox.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(15));
         WarriorNameTextbox.type(name);
         CreateAWarriorButton.click();
-
     }
 
+//  Click on Start your journey button
     public void clickOnStartYourJourneyButton(String name) {
-
         StartYourJourney.waitUntilClickable().setImplicitTimeout(Duration.ofSeconds(5));
         String StartYourJourneyButton = "//a[contains(text(),'Start your journey "+name+"')]";
         find(By.xpath(StartYourJourneyButton)).waitUntilClickable().click();
