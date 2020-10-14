@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/src/test/java/StepDefinitionPages/pages/Ignore/FSR_Opportunity.java" />
+      <file url="file://$PROJECT_DIR$/src/test/java/StepDefinitionPages/steps/serenity/EndUserSteps.java" />
+      <file url="file://$PROJECT_DIR$/src/test/java/StepDefinitionFSO/steps/DefinitionSteps.java" />
+      <file url="file://$PROJECT_DIR$/src/test/java/StepDefinitionPages/steps/Login.java" />
+      <file url="file://$PROJECT_DIR$/src/test/java/StepDefinitionPages/steps/IgnoreSteps/Insight_StudentProgram.java" />
+      <file url="file://$PROJECT_DIR$/src/test/java/StepDefinitionPages/steps/IgnoreSteps/Opportunity.java" />
+      <file url="file://$PROJECT_DIR$/src/test/java/StepDefinitionPages/pages/Ignore/FSR_studentProgram.java" />
+      <file url="file://$PROJECT_DIR$/src/test/java/StepDefinitionPages/pages/Loginpage.java" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="CoVidGame" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

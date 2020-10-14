@@ -1,0 +1,93 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 13,
+        "name": "\"Iron Man The Handwasher\" enters the virtual Public place battlefield and solves the list of all online questionnaires successfully related to precautions.",
+        "description": "",
+        "id": "super-villain-covid-19-has-struck-planet-earth--and-humans-are-on-the-verge-of-extinction.-our-superheroes--the-avengers-have-come-to-the-rescue.-this-mission-starts-with-battling-our-super-villain-at-various-public-places-and-educate-humans--to-fight-covid-villain.;\"iron-man-the-handwasher\"-enters-the-virtual-public-place-battlefield-and-solves-the-list-of-all-online-questionnaires-successfully-related-to-precautions.;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 5,
+            "name": "\"Iron Man 500\" has navigated to the webApp",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 6,
+            "name": "enters his/her warrior name as \"IronMan_500\" and starts the journey",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 7,
+            "name": "selects his battlefield \"PublicPlace\"",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 8,
+            "name": "starts the questionnaire",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 9,
+            "name": "the questions are successfully attacked one at a time until the end \"PublicPlace\"",
+            "match": {},
+            "keyword": "When "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@PublicPlace"
+          },
+          {
+            "name": "@Regression"
+          }
+        ]
+      }
+    ],
+    "name": "Super villain COVID-19 has struck Planet Earth, and humans are on the verge of extinction. Our superheroes, The Avengers have come to the rescue. This mission starts with battling our super villain at various Public places and educate humans  to fight COVID villain.",
+    "description": "",
+    "id": "super-villain-covid-19-has-struck-planet-earth--and-humans-are-on-the-verge-of-extinction.-our-superheroes--the-avengers-have-come-to-the-rescue.-this-mission-starts-with-battling-our-super-villain-at-various-public-places-and-educate-humans--to-fight-covid-villain.",
+    "keyword": "Feature",
+    "uri": "C:/VHATechChallenge/VHATechCHallenge/CoVidGame/src/test/resources/features/Regression/Components/PublicPlace/PublicPlaceBattlefield.feature",
+    "tags": [
+      {
+        "name": "@PublicPlace",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@Regression",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 14
+        }
+      }
+    ]
+  }
+]
