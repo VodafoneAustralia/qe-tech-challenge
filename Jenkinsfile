@@ -10,7 +10,8 @@ pipeline {
     stage('Execute Regression suite') {
       steps {
         dir(path: 'CoVidGame') {
-          sh 'mvn clean verify'
+          sh '''cd CoVidGame
+mvn clean verify'''
         }
 
       }
