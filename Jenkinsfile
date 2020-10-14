@@ -1,5 +1,11 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven'
+      args '-v $HOME/.m2:/root/.m2'
+    }
+
+  }
   stages {
     stage('Execute Regression suite') {
       steps {
