@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "94900fc9-ca1d-4200-b5f9-c868cdda4843",
+		"name": "API_VHATechChallenge_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Set global Variable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "99e60a33-1b75-49f7-8da4-677616b333c7",
+						"exec": [
+							"pm.test('creating a new Warrior', function()\r",
+							"{\r",
+							"console.log(\" setting username for our warrior\");\r",
+							"\r",
+							"postman.setGlobalVariable('Warrior',\"Avenger\" + Math.floor(Math.random() * 1000) + \"Warrior\");\r",
+							"\r",
+							"let Warrior_Updated = pm.globals.get(\"Warrior\");\r",
+							"\r",
+							"console.log(\"Usrname set check\"+Warrior_Updated)\r",
+							"\r",
+							"    pm.response.to.have.status(200);\r",
+							"\r",
+							"    \r",
+							"\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://supervillain.herokuapp.com/v1/user",
+					"protocol": "https",
+					"host": [
+						"supervillain",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c3ceb656-9108-44e5-a5f5-b5e7c8f9d4a5",
+						"exec": [
+							"pm.test('creating a new Warrior', function()\r",
+							"{\r",
+							"postman.setGlobalVariable('Score',Math.floor(Math.random() * 100000));\r",
+							"let Score_Updated = pm.globals.get(\"Score\");\r",
+							"console.log(\"Check Score\" +Score_Updated)\r",
+							"    pm.response.to.have.status(201);\r",
+							"\r",
+							"    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"{{Warrior}}\",\r\n  \"score\": -200\r\n}"
+				},
+				"url": {
+					"raw": "https://supervillain.herokuapp.com/v1/user",
+					"protocol": "https",
+					"host": [
+						"supervillain",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update score",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c08a8b3c-70f4-4e46-bdb2-b41a0daf2482",
+						"exec": [
+							"pm.test('Update the Warrior', function()\r",
+							"{\r",
+							"     pm.response.to.have.status(204);\r",
+							"\r",
+							"    //  var jsonData = pm.response.json();\r",
+							"    //  console.log(+jsonData);\r",
+							"\r",
+							"     \r",
+							"\r",
+							" \r",
+							"\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"{{Warrior}}\",\r\n  \"score\": \"{{Score}}\"\r\n}"
+				},
+				"url": {
+					"raw": "https://supervillain.herokuapp.com/v1/user",
+					"protocol": "https",
+					"host": [
+						"supervillain",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all user list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "848fa3e4-6738-4fa3-819a-84d0e328d525",
+						"exec": [
+							"pm.test('creating a new Warrior', function()\r",
+							"{\r",
+							"    // postman.setGlobalVariable('Warrior',\"Avenger\" + Math.floor(Math.random() * 1000) + \"Warrior\");\r",
+							"// let Warrior_Updated = pm.globals.get(\"Warrior\");\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.expect(jsonData.username).to.eql(pm.environment.get(\"Warrior\"));\r",
+							"\r",
+							"pm.expect(jsonData.score).to.eql(pm.environment.get(\"Score\"));\r",
+							"\r",
+							"pm.response.to.have.status(200);\r",
+							"   \r",
+							"\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://supervillain.herokuapp.com/v1/user",
+					"protocol": "https",
+					"host": [
+						"supervillain",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d19b4324-0c78-4159-8a68-da382bc70d9e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fb437117-fb48-402d-8c40-9211a87fce78",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "1521ef9c-3ce8-4bed-ad51-54fcc7eb9f8a",
+			"key": "Warrior",
+			"value": "Batman3",
+			"disabled": true
+		}
+	],
+	"protocolProfileBehavior": {}
+}
