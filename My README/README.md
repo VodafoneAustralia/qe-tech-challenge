@@ -33,4 +33,4 @@ B. API Automated tests
     will be Red.
 
 Access Reports
-Click on the latest build run, go to the dropdown option(It should be in the following format '#BuildNumber' and you see the dropdown option when you hover over it), click on Console Output and then click on 'PLain Text'. 
+Click on the latest build run, go to the dropdown option(It should be in the following format '#BuildNumber' and you see the dropdown option when you hover over it), click on Console Output and then click on 'Vew as Plain Text' under "Console Output". 
