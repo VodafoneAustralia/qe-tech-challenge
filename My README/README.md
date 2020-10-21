@@ -22,7 +22,7 @@ unzip it, click on "serenity" folder and open index.html 3. Click on
 "+" Sign under Steps to expand all the individual steps 4. Click on the
 image section on the right to view the screenshots and use the arrow
 keys to traverse through them
-
+Updating 
 B. API Automated tests
 
 1.  Navigate to https://d147963ce8dc.ngrok.io/
@@ -33,9 +33,4 @@ B. API Automated tests
     will be Red.
 
 Access Reports
-
-Method 1 Navigate to
-https://d147963ce8dc.ngrok.io/job/VHATechChallenge/ws/CoVidGame/target/site/serenity/index.html
-
-Method 2 Same as for UI Automated tests above with the following link:
-https://d147963ce8dc.ngrok.io/job/VHATechChallenge/ws/CoVidGame/target/site/
+Hover near the latest build run (It sshould be in the following format '#BuildNumber'), click on Console Output and then click on 'PLain Text'. 
