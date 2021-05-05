@@ -4,32 +4,23 @@ Welcome to our Quality Engineering Technical challenge. The purpose of this chal
 
 ## The Challenge
 
-Currently, we are running project [SuperHeroes and SuperVillain](https://github.com/users/ale-sanchez-g/projects/1). This is running in a Kanban Board and some tasks need to be completed before our big release.
+Develop a UI & API test automation framework and create tests within this framework as outlined below --
 
-Currently, the application is made of a Basic HTML front end that connects to different services with GraphQL and Rest APIs.
-
-To be successful in this challenge you need to provide the below:
-
-- Report any Defects in a DEFECT.md file in this repo
-- Web automation framework to regression test https://responsivefight.herokuapp.com/
-- API automation framework to regression test https://supervillain.herokuapp.com/api-docs/
-
-### Extra Points
-
-- Find security vulnerabilities and report them.
-  - Also, create a user in the game with more than **4000** points in the [leaderboard](https://responsivefight.herokuapp.com/leaderboard)
-- Run your test in a CI that can be accessed by anyone
-- Integrate your test with a Visual Validation tool
-- Integrate your CI execution with a public slack channel
+1. Visit Vodafone's online Postpaid SIM only page https://www.vodafone.com.au/plans/sim-only 
+2. Send a GET request to https://api-prod.prod.cms.df.services.vodafone.com.au/plan/postpaid-simo?serviceType=New
+3. Validate if for all plans cta ('Add to cart' button) in the UI matches with the ctaLabel field (under planListing/plans/)from the above GET request in Step 2.
+4. Select any plan and validate if the price shown in sticky cart is same as the plan selected.
+5. Proceed to cart and validate if cart page is shown with the correct product.
 
 
 ## Guidelines
 
-Use **your preferred programming language**. However, our preferred programming language is **Javascript**.
+Use **your preferred programming language and tool**. However, our preferred tool is **Cypress** and programming language is **Javascript** 
 
 ### Steps
 
-- Create your own Github repository and make [asanchezgiraldo](https://github.com/asanchezgiraldo) a read-only collaborator.
+- Create your own Github repository and make [Abhilash-Srinivasa] and [as14gz] a read-only collaborator.
 - Create a README.md file explaining how to execute your test.
+- Sign up to any free CI tool such as Gitlab, CircleCI etc. Run your test in the CI and share the result url with us.
+- Ensure code is written neatly showcasing reusability and easy maintainability of tests.
 - Complete within 3 days of your interview.
-- Be as creative as you can with this challenge.
